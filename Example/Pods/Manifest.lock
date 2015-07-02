@@ -1,0 +1,51 @@
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - BaixingSDK (0.1.0)
+  - FBSnapshotTestCase (2.0.2):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.2)
+  - FBSnapshotTestCase/Core (2.0.2)
+  - FBSnapshotTestCase/SwiftSupport (2.0.2):
+    - FBSnapshotTestCase/Core
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+
+DEPENDENCIES:
+  - AFNetworking
+  - BaixingSDK (from `../`)
+  - FBSnapshotTestCase
+  - FMDB
+
+EXTERNAL SOURCES:
+  BaixingSDK:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  BaixingSDK: 823167e44cbe919fe55e843b30266a98f197645f
+  FBSnapshotTestCase: fd500d5b282c4ec60215d26d0b58b0cf271dd0d6
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+
+COCOAPODS: 0.36.3

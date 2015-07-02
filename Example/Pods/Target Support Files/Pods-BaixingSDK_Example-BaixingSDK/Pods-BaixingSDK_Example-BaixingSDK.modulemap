@@ -1,0 +1,6 @@
+framework module BaixingSDK {
+  umbrella header "Pods-BaixingSDK_Example-BaixingSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

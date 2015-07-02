@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/BaixingSDK/Model/BXHttpCacheObject.h
