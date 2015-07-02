@@ -11,18 +11,12 @@ Pod::Spec.new do |s|
   s.name             = "BaixingSDK"
   s.version          = "1.0.0"
   s.summary          = "It is a baixing base library."
-  s.description      = <<-DESC
-                       An optional longer description of BaixingSDK
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
+  s.description      = "It is a baixing base library. Join us:shaozhengxingok@126.com"
   s.homepage         = "https://github.com/iException/BaixingSDK"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "phoebus" => "shaozhengxingok@126.com" }
   s.source           = { :git => "https://github.com/iException/BaixingSDK.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -34,5 +28,7 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.library = 'sqlite3'
+  s.dependency 'AFNetworking'
+  s.dependency 'FMDB'
 end

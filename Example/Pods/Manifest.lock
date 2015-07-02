@@ -20,7 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BaixingSDK (0.1.0)
+  - BaixingSDK (1.0.0):
+    - AFNetworking
+    - FMDB
   - FBSnapshotTestCase (2.0.2):
     - FBSnapshotTestCase/SwiftSupport (= 2.0.2)
   - FBSnapshotTestCase/Core (2.0.2)
@@ -33,10 +35,8 @@ PODS:
     - FMDB/common
 
 DEPENDENCIES:
-  - AFNetworking
   - BaixingSDK (from `../`)
   - FBSnapshotTestCase
-  - FMDB
 
 EXTERNAL SOURCES:
   BaixingSDK:
@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  BaixingSDK: 823167e44cbe919fe55e843b30266a98f197645f
+  BaixingSDK: 2638444941c0467c32e60193a2fcc3b535d6d9f6
   FBSnapshotTestCase: fd500d5b282c4ec60215d26d0b58b0cf271dd0d6
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
 

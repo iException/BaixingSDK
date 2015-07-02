@@ -3,9 +3,6 @@ use_frameworks!
 
 target 'BaixingSDK_Example', :exclusive => true do
   pod "BaixingSDK", :path => "../"
-  
-  pod 'AFNetworking'
-  pod 'FMDB'
 end
 
 target 'BaixingSDK_Tests', :exclusive => true do

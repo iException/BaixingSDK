@@ -48,10 +48,14 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'AFNetworking.framework'
   install_framework 'BaixingSDK.framework'
   install_framework 'FBSnapshotTestCase.framework'
+  install_framework 'FMDB.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'AFNetworking.framework'
   install_framework 'BaixingSDK.framework'
   install_framework 'FBSnapshotTestCase.framework'
+  install_framework 'FMDB.framework'
 fi
