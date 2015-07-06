@@ -12,5 +12,6 @@
     #import "BXNetworkManager.h"
     #import "BXHttpRequest.h"
     #import "BXHttpCache.h"
+    #import "NSString+BXURLEncode.h"
 
 #endif
