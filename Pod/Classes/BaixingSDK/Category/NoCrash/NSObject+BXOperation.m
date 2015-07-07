@@ -48,7 +48,7 @@
     [self bx_setSafeObject:value forSafeKey:key];
 }
 
-- (void)bx_bx_removeSafeObjectForKey:(id)key
+- (void)bx_removeSafeObjectForKey:(id)key
 {
     if (NO == [self isKindOfClass:[NSMutableDictionary class]]) {
         return;
@@ -132,7 +132,7 @@
     }
 }
 
-- (void)bx_bx_removeSafeObjectAtIndex:(NSUInteger)index
+- (void)bx_removeSafeObjectAtIndex:(NSUInteger)index
 {
     NSAssert([self isKindOfClass:[NSArray class]], @"object is not an array");
     

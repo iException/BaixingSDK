@@ -17,7 +17,7 @@
 - (void)bx_setSafeObject:(id)object forSafeKey:(id)key;
 - (void)bx_setSafeValue:(id)value forSafeKey:(NSString *)key;
 
-- (void)bx_bx_removeSafeObjectForKey:(id)key;
+- (void)bx_removeSafeObjectForKey:(id)key;
 
 // NSArray
 - (id)bx_safeObjectAtIndex:(NSUInteger)index;
@@ -26,7 +26,7 @@
 
 // NSMutableArray
 - (void)bx_addSafeObject:(id)object;
-- (void)bx_bx_removeSafeObjectAtIndex:(NSUInteger)index;
+- (void)bx_removeSafeObjectAtIndex:(NSUInteger)index;
 - (void)bx_replaceSafeObjectAtIndex:(NSUInteger)index withSafeObject:(id)object;
 - (void)bx_removeSafeObject:(id)object;
 - (BOOL)bx_containsSafeObject:(id)object;
