@@ -19,6 +19,8 @@ typedef enum {
 
 + (instancetype)shareManager;
 
+- (void)logEnable:(BOOL)enable;
+
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
               header:(NSDictionary *)header

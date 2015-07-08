@@ -14,6 +14,7 @@
 #import "BXHttpCacheObject.h"
 #import "BXHttpResponseObject.h"
 #import "BXError.h"
+#import "AFHTTPRequestOperationLogger.h"
 
 extern NSString * const kBXHttpCacheObjectRequest;
 extern NSString * const kBXHttpCacheObjectExpire;
@@ -21,7 +22,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
 
 @interface BXNetworkManager ()
 
-@property (nonatomic, assign) BOOL isWiFi;
+@property (nonatomic, assign) BOOL showLog;
 
 @end
 
@@ -55,6 +56,11 @@ extern NSString * const kBXHttpCacheObjectResponse;
     return [BXNetworkManager shareManager];
 }
 
+- (void)logEnable:(BOOL)enable
+{
+    self.showLog = enable;
+}
+
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
               header:(NSDictionary *)header
@@ -63,6 +69,13 @@ extern NSString * const kBXHttpCacheObjectResponse;
              success:(void (^)(id data))success
              failure:(void (^)(BXError *bxError))failure
 {
+    if ( self.showLog ) {
+        [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
+        [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    } else {
+        [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
+    }
+    
     if (method == BX_GET) {
         // read cache data
         if (useCache) {

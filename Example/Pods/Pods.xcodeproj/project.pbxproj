@@ -716,6 +716,13 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		699382641B4CEF8F00996960 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		6A26480D573FF8261C35F864 /* Pods-BaixingSDK_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +791,7 @@
 				70AB5B144AF1A1E26E622B8F /* BXNetworkKit.h */,
 				9CC28C682A4873DEF9A686CA /* BXNetworkManager.h */,
 				641D35395352DB95D27927A2 /* BXNetworkManager.m */,
+				699382641B4CEF8F00996960 /* Log */,
 				D1B75337FFF0CC9041569EA8 /* Cache */,
 				AA5B66CDE37756D968462A90 /* Http */,
 			);
