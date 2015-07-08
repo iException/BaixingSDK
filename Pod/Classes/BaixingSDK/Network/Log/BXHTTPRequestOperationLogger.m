@@ -7,7 +7,7 @@
 //
 
 #import "BXHTTPRequestOperationLogger.h"
-#import "BXHTTPRequestOperation.h"
+#import "AFHTTPRequestOperation.h"
 #import <objc/runtime.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
@@ -49,8 +49,8 @@
 - (void)startLogging {
     [self stopLogging];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidStart:) name:BXNetworkingOperationDidStartNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidFinish:) name:BXNetworkingOperationDidFinishNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidStart:) name:AFNetworkingOperationDidStartNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidFinish:) name:AFNetworkingOperationDidFinishNotification object:nil];
 }
 
 - (void)stopLogging {
@@ -62,9 +62,9 @@
 static void *BXHTTPRequestOperationStartDate = &BXHTTPRequestOperationStartDate;
 
 - (void)HTTPOperationDidStart:(NSNotification *)notification {
-    BXHTTPRequestOperation *operation = (BXHTTPRequestOperation *)[notification object];
+    AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
     
-    if (![operation isKindOfClass:[BXHTTPRequestOperation class]]) {
+    if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
         return;
     }
     
@@ -92,9 +92,9 @@ static void *BXHTTPRequestOperationStartDate = &BXHTTPRequestOperationStartDate;
 }
 
 - (void)HTTPOperationDidFinish:(NSNotification *)notification {
-    BXHTTPRequestOperation *operation = (BXHTTPRequestOperation *)[notification object];
+    AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
     
-    if (![operation isKindOfClass:[BXHTTPRequestOperation class]]) {
+    if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
         return;
     }
     
