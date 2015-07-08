@@ -14,7 +14,7 @@
 #import "BXHttpCacheObject.h"
 #import "BXHttpResponseObject.h"
 #import "BXError.h"
-#import "AFHTTPRequestOperationLogger.h"
+#import "BXHTTPRequestOperationLogger.h"
 
 extern NSString * const kBXHttpCacheObjectRequest;
 extern NSString * const kBXHttpCacheObjectExpire;
@@ -70,10 +70,10 @@ extern NSString * const kBXHttpCacheObjectResponse;
              failure:(void (^)(BXError *bxError))failure
 {
     if ( self.showLog ) {
-        [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
-        [[AFHTTPRequestOperationLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+        [[BXHTTPRequestOperationLogger sharedLogger] startLogging];
+        [[BXHTTPRequestOperationLogger sharedLogger] setLevel:BXLoggerLevelDebug];
     } else {
-        [[AFHTTPRequestOperationLogger sharedLogger] stopLogging];
+        [[BXHTTPRequestOperationLogger sharedLogger] stopLogging];
     }
     
     if (method == BX_GET) {
