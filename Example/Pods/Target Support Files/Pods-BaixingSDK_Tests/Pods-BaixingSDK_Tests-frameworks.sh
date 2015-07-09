@@ -53,6 +53,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'CocoaLumberjack.framework'
   install_framework 'FBSnapshotTestCase.framework'
   install_framework 'FMDB.framework'
+  install_framework 'OpenUDID.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
@@ -60,4 +61,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'CocoaLumberjack.framework'
   install_framework 'FBSnapshotTestCase.framework'
   install_framework 'FMDB.framework'
+  install_framework 'OpenUDID.framework'
 fi

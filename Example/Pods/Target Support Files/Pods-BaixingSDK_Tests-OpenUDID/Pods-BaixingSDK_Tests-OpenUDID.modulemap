@@ -1,0 +1,6 @@
+framework module OpenUDID {
+  umbrella header "Pods-BaixingSDK_Tests-OpenUDID-umbrella.h"
+
+  export *
+  module * { export * }
+}
