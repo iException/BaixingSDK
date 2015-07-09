@@ -21,6 +21,10 @@ typedef enum {
 
 - (void)logEnable:(BOOL)enable;
 
+- (BOOL)isReachable;
+
+- (BOOL)isWiFiNetwork;
+
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
               header:(NSDictionary *)header

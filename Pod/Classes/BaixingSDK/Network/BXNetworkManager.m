@@ -61,6 +61,31 @@ extern NSString * const kBXHttpCacheObjectResponse;
     self.showLog = enable;
 }
 
+- (BOOL)isReachable
+{
+    AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    
+    if (status == AFNetworkReachabilityStatusReachableViaWiFi ||
+        status == AFNetworkReachabilityStatusReachableViaWWAN ||
+        status == AFNetworkReachabilityStatusUnknown /* AppStart status */ ) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)isWiFiNetwork
+{
+    AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    
+    if (status == AFNetworkReachabilityStatusReachableViaWiFi ||
+        status == AFNetworkReachabilityStatusUnknown /* AppStart status */ ) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
               header:(NSDictionary *)header
