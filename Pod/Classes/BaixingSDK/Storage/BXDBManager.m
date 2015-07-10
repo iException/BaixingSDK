@@ -20,7 +20,7 @@
 
 static dispatch_queue_t _database_queue = NULL;
 
-+ (id)shareManager
++ (instancetype)shareManager
 {
     static dispatch_once_t token;
     static BXDBManager *manager;
@@ -32,7 +32,7 @@ static dispatch_queue_t _database_queue = NULL;
     return manager;
 }
 
-- (id)initInstance
+- (instancetype)initInstance
 {
     self = [super init];
     
@@ -48,7 +48,7 @@ static dispatch_queue_t _database_queue = NULL;
     return self;
 }
 
-- (id)init
+- (instancetype)init
 {
     return [BXDBManager shareManager];
 }

@@ -15,6 +15,7 @@
 #import "BXHttpResponseObject.h"
 #import "BXError.h"
 #import "BXHTTPRequestOperationLogger.h"
+#import "BXDBManager.h"
 
 extern NSString * const kBXHttpCacheObjectRequest;
 extern NSString * const kBXHttpCacheObjectExpire;
@@ -46,6 +47,10 @@ extern NSString * const kBXHttpCacheObjectResponse;
 
     if (self) {
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+        
+        // create cache db table.
+        NSString *sql = @"create table if not exists net_caches (request text primary key, expire text, response blob);";
+        [[BXDBManager shareManager] batchExecuteSql:sql];
     }
 
     return self;
@@ -116,8 +121,11 @@ extern NSString * const kBXHttpCacheObjectResponse;
         // send request
         [BXHttpRequest getByUrl:url header:header parameters:parameters success:^(AFHTTPRequestOperation *operation, id data) {
             BXHttpResponseObject *httpResponse = [[BXHttpResponseObject alloc] initWithObject:data];
-            NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url header:header parameters:parameters];
-            [[BXHttpCache shareCache] setCache:httpResponse forKey:cacheKey];
+            
+            if ( useCache ) {
+                NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url header:header parameters:parameters];
+                [[BXHttpCache shareCache] setCache:httpResponse forKey:cacheKey];
+            }
             
             // callback
             success(httpResponse.result);

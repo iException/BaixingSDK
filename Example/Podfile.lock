@@ -20,11 +20,10 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BaixingSDK (1.1.1):
+  - BaixingSDK (1.1.2):
     - AFNetworking (= 2.5.4)
     - CocoaLumberjack (= 2.0.0)
     - FMDB (= 2.5)
-    - OpenUDID
   - CocoaLumberjack (2.0.0):
     - CocoaLumberjack/Default (= 2.0.0)
     - CocoaLumberjack/Extensions (= 2.0.0)
@@ -43,7 +42,6 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
-  - OpenUDID (1.0.0)
 
 DEPENDENCIES:
   - BaixingSDK (from `../`)
@@ -55,10 +53,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  BaixingSDK: 97a1b980eb3df3b6fcef3f507727af68df076e8f
+  BaixingSDK: 93f06b8ee4d7a3ac87c68fe0b9b23d457c0f8be1
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   FBSnapshotTestCase: fd500d5b282c4ec60215d26d0b58b0cf271dd0d6
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
 
 COCOAPODS: 0.37.2

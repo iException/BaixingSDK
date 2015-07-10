@@ -1,6 +1,6 @@
 {
   "name": "BaixingSDK",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "summary": "It is a baixing base library.",
   "description": "It is a baixing base library. Join us:shaozhengxingok@126.com",
   "homepage": "https://github.com/iException/BaixingSDK",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/iException/BaixingSDK.git",
-    "tag": "1.1.1"
+    "tag": "1.1.2"
   },
   "platforms": {
     "ios": "7.0"
@@ -32,9 +32,6 @@
     ],
     "CocoaLumberjack": [
       "2.0.0"
-    ],
-    "OpenUDID": [
-
     ]
   }
 }

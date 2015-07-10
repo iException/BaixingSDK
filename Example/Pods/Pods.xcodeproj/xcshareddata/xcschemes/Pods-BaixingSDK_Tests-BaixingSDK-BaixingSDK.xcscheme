@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D0D2204D125B66FCAA5F2BF"
+               BlueprintIdentifier = "7447552AFFF966D23F41FB03"
                BuildableName = "BaixingSDK.bundle"
                BlueprintName = "Pods-BaixingSDK_Tests-BaixingSDK-BaixingSDK"
                ReferencedContainer = "container:Pods.xcodeproj">

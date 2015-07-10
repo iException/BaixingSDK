@@ -10,7 +10,7 @@
 
 @interface BXDBManager : NSObject
 
-+ (id)shareManager;
++ (instancetype)shareManager;
 
 - (BOOL)clearDBFile;
 
