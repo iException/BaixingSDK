@@ -37,6 +37,7 @@ typedef enum {
                 fileName:(NSString *)fileName
                     file:(NSData *)fileData
               parameters:(NSDictionary *)parameters
+                progress:(void (^)(long long writedBytes,long long totalBytes))progress
                  success:(void (^)(id data))success
                  failure:(void (^)(BXError *bxError))failure;
 

@@ -154,6 +154,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
                 fileName:(NSString *)fileName
                     file:(NSData *)fileData
               parameters:(NSDictionary *)parameters
+                progress:(void (^)(long long writedBytes,long long totalBytes))progress
                  success:(void (^)(id data))success
                  failure:(void (^)(BXError *bxError))failure
 {
@@ -161,7 +162,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 
-    [manager POST:@"" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    AFHTTPRequestOperation *operation = [manager POST:@"" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:fileData name:@"file" fileName:fileName mimeType:@"multipart/form-data"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // callback
@@ -175,6 +176,13 @@ extern NSString * const kBXHttpCacheObjectResponse;
         BXError *bxError = [self transformError:error withOperation:operation];
         failure(bxError);
     }];
+    
+    [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,
+                                        long long totalBytesWritten,
+                                        long long totalBytesExpectedToWrite) {
+        NSLog(@"Wrote %lld/%lld", totalBytesWritten, totalBytesExpectedToWrite);
+    }];
+    [operation start];
 }
 
 - (void)uploadDataByUrl:(NSString *)url
