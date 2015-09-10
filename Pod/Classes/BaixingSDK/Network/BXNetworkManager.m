@@ -180,7 +180,9 @@ extern NSString * const kBXHttpCacheObjectResponse;
     [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,
                                         long long totalBytesWritten,
                                         long long totalBytesExpectedToWrite) {
-        progress(totalBytesWritten, totalBytesExpectedToWrite);
+        if (progress) {
+            progress(totalBytesWritten, totalBytesExpectedToWrite);
+        }
     }];
     [operation start];
 }
