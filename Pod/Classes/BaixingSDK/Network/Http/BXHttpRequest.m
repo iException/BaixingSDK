@@ -7,8 +7,10 @@
 //
 
 #import "BXHttpRequest.h"
-#import "AFNetworking.h"
 #import "NSObject+BXOperation.h"
+#import "BXNetworkManager.h"
+
+#import <AFNetworking.h>
 
 @implementation BXHttpRequest
 
@@ -18,8 +20,7 @@
          success:( void (^) (id operation, id data) )success
          failure:( void (^) (id operation, NSError *error) )failure;
 {    
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFHTTPRequestOperationManager *manager = [BXNetworkManager shareManager].afManager;
     
     // header
     for (id key in [header allKeys]) {
@@ -47,8 +48,7 @@
           success:( void (^) (id operation, id data) )success
           failure:( void (^) (id operation, NSError *error) )failure;
 {
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    AFHTTPRequestOperationManager *manager = [BXNetworkManager shareManager].afManager;
     
     // header
     for (id key in [header allKeys]) {

@@ -7,8 +7,6 @@
 //
 
 #import "BXNetworkManager.h"
-#import "AFNetworking.h"
-#import "AFNetworkReachabilityManager.h"
 #import "BXHttpRequest.h"
 #import "BXHttpCache.h"
 #import "BXHttpCacheObject.h"
@@ -16,6 +14,8 @@
 #import "BXError.h"
 #import "BXHTTPRequestOperationLogger.h"
 #import "BXDBManager.h"
+
+#import <AFNetworking.h>
 
 extern NSString * const kBXHttpCacheObjectRequest;
 extern NSString * const kBXHttpCacheObjectExpire;
@@ -47,6 +47,10 @@ extern NSString * const kBXHttpCacheObjectResponse;
 
     if (self) {
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+        
+        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        self.afManager = manager;
         
         // create cache db table.
         NSString *sql = @"create table if not exists net_caches (request text primary key, expire text, response blob);";

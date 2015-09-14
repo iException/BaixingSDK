@@ -13,9 +13,11 @@ typedef enum {
     BX_POST
 } BX_HTTP_METHOD;
 
-@class BXError;
+@class BXError, AFHTTPRequestOperationManager;
 
 @interface BXNetworkManager : NSObject
+
+@property (nonatomic) AFHTTPRequestOperationManager *afManager;
 
 + (instancetype)shareManager;
 
