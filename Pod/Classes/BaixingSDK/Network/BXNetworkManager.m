@@ -50,6 +50,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
         
         AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         self.afManager = manager;
         
         // create cache db table.

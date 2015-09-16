@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BaixingSDK"
-  s.version          = "1.2.0"
+  s.version          = "1.2.1"
   s.summary          = "It is a baixing base library."
   s.description      = "It is a baixing base library. Join us:shaozhengxingok@126.com"
   s.homepage         = "https://github.com/iException/BaixingSDK"
