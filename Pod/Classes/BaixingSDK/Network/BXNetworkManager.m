@@ -15,7 +15,7 @@
 #import "BXHTTPRequestOperationLogger.h"
 #import "BXDBManager.h"
 
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 
 extern NSString * const kBXHttpCacheObjectRequest;
 extern NSString * const kBXHttpCacheObjectExpire;
