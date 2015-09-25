@@ -48,7 +48,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
     if (self) {
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
         
-        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:nil]];
+        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@""]];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         self.afManager = manager;

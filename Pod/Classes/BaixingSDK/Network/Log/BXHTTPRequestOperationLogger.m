@@ -9,7 +9,6 @@
 #import "BXHTTPRequestOperationLogger.h"
 #import "AFHTTPRequestOperation.h"
 #import <objc/runtime.h>
-#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #if !__has_feature(objc_arc)
 #error BXHTTPRequestOperationLogger must be built with ARC.
@@ -81,10 +80,10 @@ static void *BXHTTPRequestOperationStartDate = &BXHTTPRequestOperationStartDate;
 
     switch (self.level) {
         case BXLoggerLevelDebug:
-            DDLogDebug(@"%@ '%@': %@ %@", [operation.request HTTPMethod], [[operation.request URL] absoluteString], [operation.request allHTTPHeaderFields], body);
+            NSLog(@"%@ '%@': %@ %@", [operation.request HTTPMethod], [[operation.request URL] absoluteString], [operation.request allHTTPHeaderFields], body);
             break;
         case BXLoggerLevelInfo:
-            DDLogInfo(@"%@ '%@'", [operation.request HTTPMethod], [[operation.request URL] absoluteString]);
+            NSLog(@"%@ '%@'", [operation.request HTTPMethod], [[operation.request URL] absoluteString]);
             break;
         default:
             break;
@@ -110,17 +109,17 @@ static void *BXHTTPRequestOperationStartDate = &BXHTTPRequestOperationStartDate;
             case BXLoggerLevelInfo:
             case BXLoggerLevelWarn:
             case BXLoggerLevelError:
-                DDLogError(@"[Error] %@ '%@' (%ld) [%.04f s]: %@", [operation.request HTTPMethod], [[operation.response URL] absoluteString], (long)[operation.response statusCode], elapsedTime, operation.error);
+                NSLog(@"[Error] %@ '%@' (%ld) [%.04f s]: %@", [operation.request HTTPMethod], [[operation.response URL] absoluteString], (long)[operation.response statusCode], elapsedTime, operation.error);
             default:
                 break;
         }
     } else {
         switch (self.level) {
             case BXLoggerLevelDebug:
-                DDLogDebug(@"%ld '%@' [%.04f s]: %@ %@", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime, [operation.response allHeaderFields], operation.responseString);
+                NSLog(@"%ld '%@' [%.04f s]: %@ %@", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime, [operation.response allHeaderFields], operation.responseString);
                 break;
             case BXLoggerLevelInfo:
-                DDLogInfo(@"%ld '%@' [%.04f s]", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime);
+                NSLog(@"%ld '%@' [%.04f s]", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime);
                 break;
             default:
                 break;
