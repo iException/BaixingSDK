@@ -225,7 +225,13 @@ extern NSString * const kBXHttpCacheObjectResponse;
 - (BXError *)transformError:(NSError *)error withOperation:(AFHTTPRequestOperation *)operation
 {
     if (operation.responseData == nil) {
-        return [BXError errorWithNSError:error type:kBXErrorNetwork];
+        BXError *bxError = [BXError errorWithNSError:error type:kBXErrorNetwork];
+        
+        if (bxError.code == NSURLErrorNotConnectedToInternet) {
+            bxError.bxMessage = @"网络异常，请稍后重试";
+        }
+        
+        return bxError;
     }
 
     NSError *err = nil;
