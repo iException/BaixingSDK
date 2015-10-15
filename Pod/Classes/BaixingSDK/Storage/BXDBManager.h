@@ -14,6 +14,8 @@
 
 - (BOOL)clearDBFile;
 
+- (void)clearTableValues;
+
 - (id)searchBySql:(NSString *)sql
        parameters:(NSArray *)parameters;
 

@@ -71,6 +71,28 @@ static dispatch_queue_t _database_queue = NULL;
     return status;
 }
 
+- (void)clearTableValues
+{
+    dispatch_sync(_database_queue, ^{
+        if (NO == [_db goodConnection]) {
+            return;
+        };
+        
+        NSString *sql_tables = @"SELECT name FROM sqlite_master WHERE type = 'table'";
+        FMResultSet *rs = [_db executeQuery:sql_tables withArgumentsInArray:nil];
+        while ([rs next]) {
+            NSString *table = [[rs resultDictionary] bx_safeObjectForKey:@"name"];
+            if (!table) {
+                continue;
+            }
+            
+            [_db executeUpdate:[NSString stringWithFormat:@"delete from %@", table] withArgumentsInArray:nil];
+        }
+        
+        [_db executeUpdate:@"VACUUM" withArgumentsInArray:nil];
+    });
+}
+
 - (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments
 {
     __block BOOL result = YES;
