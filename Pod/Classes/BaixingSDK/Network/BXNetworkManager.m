@@ -104,7 +104,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
              success:(void (^)(id data))success
              failure:(void (^)(BXError *bxError))failure
 {
-    if ( self.showLog ) {
+    if (self.showLog) {
         [[BXHTTPRequestOperationLogger sharedLogger] startLogging];
         [[BXHTTPRequestOperationLogger sharedLogger] setLevel:BXLoggerLevelDebug];
     } else {
@@ -127,7 +127,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
         [BXHttpRequest getByUrl:url header:header parameters:parameters success:^(AFHTTPRequestOperation *operation, id data) {
             BXHttpResponseObject *httpResponse = [[BXHttpResponseObject alloc] initWithObject:data];
             
-            if ( useCache ) {
+            if (useCache) {
                 NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url header:header parameters:parameters];
                 [[BXHttpCache shareCache] setCache:httpResponse forKey:cacheKey];
             }

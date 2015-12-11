@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.library = 'sqlite3'
-  s.dependency 'AFNetworking'
+  s.dependency 'AFNetworking', '2.6.3'
   s.dependency 'FMDB'
 end
