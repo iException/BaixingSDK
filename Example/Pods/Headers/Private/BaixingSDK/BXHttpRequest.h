@@ -1,1 +1,0 @@
-../../../../../Pod/Classes/BaixingSDK/Network/Http/BXHttpRequest.h
