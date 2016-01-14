@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "BaixingSDK"
-  s.version          = "1.2.3"
+  s.version          = "1.2.4"
   s.summary          = "It is a baixing base library."
   s.description      = "It is a baixing base library. Join us:shaozhengxingok@126.com"
   s.homepage         = "https://github.com/iException/BaixingSDK"
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.library = 'sqlite3'
-  s.dependency 'AFNetworking', '2.6.3'
+  s.dependency 'AFNetworking', '~> 3.0'
   s.dependency 'FMDB'
 end
