@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AFNetworkReachabilityManager.h"
+
 typedef enum {
     BX_GET,
     BX_POST
@@ -26,6 +28,8 @@ typedef enum {
 - (BOOL)isReachable;
 
 - (BOOL)isWiFiNetwork;
+
+- (void)setReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block;
 
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method

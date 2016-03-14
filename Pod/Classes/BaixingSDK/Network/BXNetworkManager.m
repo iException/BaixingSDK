@@ -96,6 +96,12 @@ extern NSString * const kBXHttpCacheObjectResponse;
     return NO;
 }
 
+- (void)setReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block
+{
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:block];
+}
+
+
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
               header:(NSDictionary *)header
