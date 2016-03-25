@@ -9,7 +9,6 @@
 #import "BXHttpResponseObject.h"
 #import "NSObject+BXOperation.h"
 
-NSString *const kBXHttpResponseObjectResult = @"result";
 NSString *const kBXHttpResponseObjectExpireInSeconds = @"expireInSeconds";
 
 @interface BXHttpResponseObject ()
@@ -26,7 +25,7 @@ NSString *const kBXHttpResponseObjectExpireInSeconds = @"expireInSeconds";
     self = [super init];
     if (self) {
         self.expireInSeconds = [NSString stringWithFormat:@"%@", [object bx_safeObjectForKey:kBXHttpResponseObjectExpireInSeconds]];
-        self.result = [object bx_safeObjectForKey:kBXHttpResponseObjectResult];
+        self.result = object;
     }
     return self;
 }
