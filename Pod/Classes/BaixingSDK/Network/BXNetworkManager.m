@@ -101,6 +101,10 @@ extern NSString * const kBXHttpCacheObjectResponse;
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:block];
 }
 
+- (void)setAcceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes
+{
+    self.afManager.responseSerializer.acceptableStatusCodes = acceptableStatusCodes;
+}
 
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method

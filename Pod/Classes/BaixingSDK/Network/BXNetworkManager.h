@@ -30,6 +30,7 @@ typedef enum {
 - (BOOL)isWiFiNetwork;
 
 - (void)setReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block;
+- (void)setAcceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes;
 
 - (void)requestByUrl:(NSString *)url
               method:(BX_HTTP_METHOD)method
