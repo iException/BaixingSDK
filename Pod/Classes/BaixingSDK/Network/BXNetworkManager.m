@@ -255,7 +255,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
     else {
         bxError.errDictionary = errDic;
         bxError.type          = kBXErrorServer;
-        bxError.bxCode        = [[errDic objectForKey:@"error"] intValue];
+        bxError.bxCode        = [[errDic objectForKey:@"code"] intValue];
         bxError.bxMessage     = [[errDic objectForKey:@"message"] description].length ? [errDic objectForKey:@"message"] : @"";
         
         NSDictionary *extDic = [errDic objectForKey:@"ext"];
