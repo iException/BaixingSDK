@@ -22,6 +22,6 @@
 
 - (BOOL)isExpireTime:(NSString *)expireTime;
 
-- (NSString *)httpCacheKey:(NSString *)url header:(NSDictionary *)header parameters:(NSDictionary *)parameters;
+- (NSString *)httpCacheKey:(NSString *)url cacheIdentifier:(NSDictionary *)identifier parameters:(NSDictionary *)parameters;
 
 @end

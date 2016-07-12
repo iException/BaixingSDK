@@ -142,9 +142,9 @@ extern NSString * const kBXHttpCacheObjectResponse;
     return NO;
 }
 
-- (NSString *)httpCacheKey:(NSString *)url header:(NSDictionary *)header parameters:(NSDictionary *)parameters
+- (NSString *)httpCacheKey:(NSString *)url cacheIdentifier:(NSDictionary *)identifier parameters:(NSDictionary *)parameters
 {
-    return [[NSString stringWithFormat:@"%@%@%@", url, [header description], [parameters description]] md5String];
+    return [[NSString stringWithFormat:@"%@%@%@", url, [identifier description], [parameters description]] md5String];
 }
 
 - (NSString *)httpCacheTableName

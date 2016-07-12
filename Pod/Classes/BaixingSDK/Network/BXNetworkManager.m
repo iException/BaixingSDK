@@ -114,6 +114,18 @@ extern NSString * const kBXHttpCacheObjectResponse;
              success:(void (^)(id data))success
              failure:(void (^)(BXError *bxError))failure
 {
+    [self requestByUrl:url method:method header:header cacheIdentifier:header parameters:parameters useCache:useCache success:success failure:failure];
+}
+
+- (void)requestByUrl:(NSString *)url
+              method:(BX_HTTP_METHOD)method
+              header:(NSDictionary *)header
+     cacheIdentifier:(NSDictionary *)cacheIdentifier
+          parameters:(NSDictionary *)parameters
+            useCache:(BOOL)useCache
+             success:(void (^)(id))success
+             failure:(void (^)(BXError *))failure
+{
     if (self.showLog) {
         [[BXHTTPRequestOperationLogger sharedLogger] startLogging];
         [[BXHTTPRequestOperationLogger sharedLogger] setLevel:BXLoggerLevelDebug];
@@ -124,7 +136,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
     if (method == BX_GET) {
         // read cache data
         if (useCache) {
-            NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url header:header parameters:parameters];
+            NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url cacheIdentifier:cacheIdentifier parameters:parameters];
             BXHttpCacheObject *cacheObject = [[BXHttpCache shareCache] validCacheForKey:cacheKey];
             if (nil != cacheObject) {
                 id response = [NSKeyedUnarchiver unarchiveObjectWithData:cacheObject.response];
@@ -138,7 +150,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
             BXHttpResponseObject *httpResponse = [[BXHttpResponseObject alloc] initWithObject:data];
             
             if (useCache) {
-                NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url header:header parameters:parameters];
+                NSString *cacheKey = [[BXHttpCache shareCache] httpCacheKey:url cacheIdentifier:cacheIdentifier parameters:parameters];
                 [[BXHttpCache shareCache] setCache:httpResponse forKey:cacheKey];
             }
             

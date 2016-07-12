@@ -40,6 +40,15 @@ typedef enum {
              success:(void (^)(id data))success
              failure:(void (^)(BXError *bxError))failure;
 
+- (void)requestByUrl:(NSString *)url
+              method:(BX_HTTP_METHOD)method
+              header:(NSDictionary *)header
+     cacheIdentifier:(NSDictionary *)cacheIdentifier
+          parameters:(NSDictionary *)parameters
+            useCache:(BOOL)useCache
+             success:(void (^)(id data))success
+             failure:(void (^)(BXError *bxError))failure;
+
 - (void)requestMultipart:(NSString *)url
                 fileName:(NSString *)fileName
                     file:(NSData *)fileData
