@@ -244,7 +244,7 @@ extern NSString * const kBXHttpCacheObjectResponse;
     BXError *bxError = [BXError errorWithNSError:error type:kBXErrorNetwork];
     NSDictionary *errDic = [NSJSONSerialization JSONObjectWithData:operation.responseData options:kNilOptions error:&err];
 
-    if (err) {
+    if (err || ![errDic isKindOfClass:[NSDictionary class]]) {
         bxError.type      = kBxErrorJson;
         bxError.bxMessage = @"服务异常, 请稍后重试";
     }
