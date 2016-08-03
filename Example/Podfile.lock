@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - BaixingSDK (1.2.4):
+  - BaixingSDK (1.2.5):
     - AFNetworking (~> 2.6)
     - FMDB (~> 2.6)
   - FMDB (2.6):
@@ -32,11 +32,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   BaixingSDK:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  BaixingSDK: b756df4591d453eeaccc57013536ad726164db09
+  BaixingSDK: b38a25e7969b6e7db610a88125f75a90594497ce
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 901fa685b9e77ecb49aa939cd29a18b2ee7ffe4b
+
+COCOAPODS: 1.0.1

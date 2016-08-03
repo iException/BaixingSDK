@@ -1,10 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
 #use_frameworks!
 
-target 'BaixingSDK_Example', :exclusive => true do
+target 'BaixingSDK_Example' do
   pod "BaixingSDK", :path => "../"
-end
-
-target 'BaixingSDK_Tests', :exclusive => true do
-  pod "BaixingSDK", :path => "../"
+  target 'BaixingSDK_Tests' do
+    inherit! :search_paths
+  end
 end

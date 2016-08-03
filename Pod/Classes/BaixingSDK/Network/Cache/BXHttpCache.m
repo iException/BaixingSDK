@@ -144,7 +144,10 @@ extern NSString * const kBXHttpCacheObjectResponse;
 
 - (NSString *)httpCacheKey:(NSString *)url header:(NSDictionary *)header parameters:(NSDictionary *)parameters
 {
-    return [[NSString stringWithFormat:@"%@%@%@", url, [header description], [parameters description]] md5String];
+    NSMutableDictionary *mutableHeaders = [header mutableCopy];
+    [mutableHeaders removeObjectForKey:@"BAPI-HASH"];
+    [mutableHeaders removeObjectForKey:@"BAPI-NONCE"];
+    return [[NSString stringWithFormat:@"%@%@%@", url, [mutableHeaders description], [parameters description]] md5String];
 }
 
 - (NSString *)httpCacheTableName
