@@ -124,7 +124,9 @@ extern NSString * const kBXHttpCacheObjectResponse;
             BXHttpCacheObject *cacheObject = [[BXHttpCache shareCache] validCacheForKey:cacheKey];
             if (nil != cacheObject) {
                 id response = [NSKeyedUnarchiver unarchiveObjectWithData:cacheObject.response];
-                success(response);
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+                    success(response);
+                });
                 return;
             }
         }
