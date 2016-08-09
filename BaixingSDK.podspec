@@ -30,4 +30,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'AFNetworking', '~> 2.6'
   s.dependency 'FMDB', '~> 2.6'
+  s.library = 'sqlite3'
 end
