@@ -7,7 +7,7 @@
 //
 
 #import "BXDBManager.h"
-#import "FMDB.h"
+#import <FMDB/FMDB.h>
 #import "NSObject+BXOperation.h"
 
 @interface BXDBManager ()

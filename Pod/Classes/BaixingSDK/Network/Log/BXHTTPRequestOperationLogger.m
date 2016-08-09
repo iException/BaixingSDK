@@ -7,7 +7,7 @@
 //
 
 #import "BXHTTPRequestOperationLogger.h"
-#import "AFHTTPRequestOperation.h"
+#import <AFNetworking/AFHTTPRequestOperation.h>
 #import <objc/runtime.h>
 
 #if !__has_feature(objc_arc)

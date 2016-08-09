@@ -10,7 +10,7 @@
 #import "NSObject+BXOperation.h"
 #import "BXNetworkManager.h"
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation BXHttpRequest
 
