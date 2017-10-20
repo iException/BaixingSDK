@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 baixing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <NSObject+BXOperation.h>
+#import "NSObject+BXOperation.h"
 
 @interface NSObject (BXTypeCheck)
 

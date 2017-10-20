@@ -6,9 +6,7 @@
 //  Copyright (c) 2014 baixing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import "AFNetworkReachabilityManager.h"
+#import <AFNetworking/AFNetworkReachabilityManager.h>
 
 typedef enum {
     BX_GET,

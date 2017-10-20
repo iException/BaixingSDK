@@ -9,9 +9,9 @@
 #import "BXHttpCache.h"
 #import "BXDBManager.h"
 #import "BXHttpCacheObject.h"
+#import "BXHttpResponseObject.h"
 #import "NSString+Md5.h"
 #import <sqlite3.h>
-#import "BXHttpResponseObject.h"
 
 NSString * const kBXHttpCacheTableName          = @"net_caches";
 
